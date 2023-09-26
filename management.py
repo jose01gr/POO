@@ -4,7 +4,8 @@ import os
 
 class Management():
     AGREGAR_HOTEL = 1
-    CONSULTAR_HOTEL = 1
+    CONSULTAR_HOTEL = 2
+    CONSULTAR = 3
     SALIR = 0
     
     def __init__(self):
@@ -49,9 +50,12 @@ class Management():
     def consultar_hoteles(self):
         os.system('cls')
         print('                Consultar Hoteles')
-        if len(self.libros) == 0:
+        if len(self.hoteles) == 0:
+            print('No hay hoteles en la base de datos')
+        else:
             for hotel in self.hoteles:
-                print(f'{hotel}')
+                print(f'''
+{hotel}''')
                 print('-'*50)
             
     def consultar_hotel(self):
@@ -70,11 +74,12 @@ class Management():
         while continuar:
             os.system('cls')
             print(f'''
-                  {Management.AGREGAR_HOTEL}) Agregar Hotel
-                  {Management.CONSULTAR_HOTEL}) Consultar hotel
-                  {Management.SALIR}) Salir
+{Management.AGREGAR_HOTEL}) Agregar Hotel
+{Management.CONSULTAR_HOTEL}) Consultar hotel
+{Management.CONSULTAR}) Consultar Hoteles
+{Management.SALIR}) Salir
                   ''')
-            opc = input('Seleccione una opcion')
+            opc = input('Seleccione una opcion: ')
             try:
                 opc = int(opc)
             except:
@@ -83,6 +88,8 @@ class Management():
                 self.agregarHotel()
             elif opc == Management.CONSULTAR_HOTEL:
                 self.consultar_hotel()
+            elif opc == Management.CONSULTAR:
+                self.consultar_hoteles()
             elif opc == Management.SALIR:
                 continuar = False
             else:
