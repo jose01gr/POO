@@ -1,0 +1,34 @@
+{
+    "hoteles": [
+        {
+            "nombre": "Marriot Madrid",
+            "direccion": "Calle Cristiano Ronaldo. Madrid. Espana",
+            "telefono": "02514455248",
+            "habitaciones": 20,
+            "nroReservas": 0
+        },
+        {
+            "nombre": "Marriot Cancun",
+            "direccion": "avenida libertador. Cancun. Mexico",
+            "telefono": "02514455248",
+            "habitaciones": 20,
+            "nroReservas": 0
+        },
+        {
+            "nombre": "Lidotel Suites",
+            "direccion": "avenida Bracamonte. Barquisimeto. Venezuela",
+            "telefono": "02514435248",
+            "habitaciones": 10,
+            "nroReservas": 3
+        },
+        {
+            "nombre": "Trinitarias Suites",
+            "direccion": "avenida Los leones. Barquisimeto. Venezuela",
+            "telefono": "02514437098",
+            "habitaciones": 50,
+            "nroReservas": 12
+        }
+    ],
+    "reservas":  [{
+    }]
+}
