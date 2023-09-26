@@ -1,7 +1,8 @@
-from m
+from management import Management
 
 def main():
-    pass
+    man = Management()
+    man.menu()
 
 if __name__ == '__main__':
     main()
