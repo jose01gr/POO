@@ -1,5 +1,4 @@
 import json
-from typing import Any
 
 class Hotels():
     def __init__(self, nombre='', direccion='', telefono='', habitaciones='', nroReservas=''):
@@ -65,12 +64,12 @@ class Hotels():
     def __str__(self):
         return f'Nombre: {self._nombre}, Dirección: {self._direccion}, Teléfono: {self._telefono}, Habitaciones: {self._habitaciones}, Nro. Reservas: {self._nroReservas}'
     
-    class Hotels_Encoder(json.JSONEncoder):
-        def default(self, o):
-            if isinstance(o, Hotels):
-                return {'nombre': o.nombre, 'direccion': o.direccion, 'telefono': o.telefono, 'habitaciones': o.habitaciones, 'nroReservas': o.nroReservas}
-            return json.JSONEncoder.default(self, o)
+class Hotels_Encoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, Hotels):
+            return {'nombre': o.nombre, 'direccion': o.direccion, 'telefono': o.telefono, 'habitaciones': o.habitaciones, 'nroReservas': o.nroReservas}
+        return json.JSONEncoder.default(self, o)
         
-        def desde_json(diccionario):
-            return Hotels(diccionario['nombre'], diccionario['direccion'], diccionario['telefono'], diccionario['habitaciones'], diccionario['nroReservas'])
+    def desde_json(diccionario):
+        return Hotels(diccionario['nombre'], diccionario['direccion'], diccionario['telefono'], diccionario['habitaciones'], diccionario['nroReservas'])
     
